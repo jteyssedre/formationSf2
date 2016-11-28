@@ -3,6 +3,8 @@
 namespace Formation\CatalogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Formation\CatalogBundle\Entity\Category;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Product
@@ -55,7 +57,18 @@ class Product
      * @ORM\Column(name="sku", type="string", length=255, unique=true)
      */
     private $sku;
-
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Formation\CatalogBundle\Entity\Product", cascade={"persist"})
+     */
+    private $categories;
+    
+    
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+        $this->categories = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -180,5 +193,38 @@ class Product
     public function getSku()
     {
         return $this->sku;
+    }
+    
+    /**
+     * Add category
+     * 
+     * @param Category $category
+     * @return $this
+     */
+    public function addCategory(Category $category)
+    {
+        $this->categories[] = $category;
+        
+        return $this;
+    }
+    
+    /**
+     * Remove category
+     * 
+     * @param Category $category
+     */
+    public function removeCategory(Category $category)
+    {
+        $this->categories->removeElement($category);
+    }
+    
+    /**
+     * Get categories
+     * 
+     * @return array
+     */
+    public function getCategories()
+    {
+        return $this->categories;
     }
 }
