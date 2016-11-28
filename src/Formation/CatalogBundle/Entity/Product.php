@@ -59,7 +59,8 @@ class Product
     private $sku;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Formation\CatalogBundle\Entity\Product", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Formation\CatalogBundle\Entity\Category", cascade={"persist"})
+     * @ORM\JoinTable(name="product_category")
      */
     private $categories;
     
