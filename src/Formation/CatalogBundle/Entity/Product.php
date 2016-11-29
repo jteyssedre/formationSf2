@@ -67,7 +67,7 @@ class Product
     
     public function __construct()
     {
-        $this->date = new \DateTime();
+        $this->createdDate = new \DateTime();
         $this->categories = new ArrayCollection();
     }
 
