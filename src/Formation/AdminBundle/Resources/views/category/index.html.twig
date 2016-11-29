@@ -1,9 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <p><a href="{{ path('admin_index') }}">Return</a></p>
+    
     <h1>Categories list</h1>
+    
+    {% if categories is empty %}
+        <p>No category registered</p>
+    {% else %}
 
-    <table>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -32,6 +38,8 @@
         {% endfor %}
         </tbody>
     </table>
+        
+    {% endif %}      
 
     <ul>
         <li>

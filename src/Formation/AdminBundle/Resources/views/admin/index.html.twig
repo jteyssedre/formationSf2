@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() }} - Administration{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-lg-offset-4 jumbotron">
+                <h1 class="text-center">Administration</h1>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Products</h2>
+    <ul>
+        <li><a href="{{ path('admin_product_index') }}">Manage products</a></li>
+    </ul>
+    
+    <h2>Categories</h2>
+    <ul>
+        <li><a href="{{ path('admin_category_index') }}">Manage categories</a></li>
+    </ul>
+    
+{% endblock %}

@@ -1,14 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <p><a href="{{ path('admin_index') }}">Return</a></p>
+    
     <h1>Products list</h1>
 
-    <table>
+    {% if products is empty %}
+        <p>No product registered</p>
+    {% else %}
+    
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Createddate</th>
-                <th>Updateddate</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Sku</th>
@@ -19,8 +23,6 @@
         {% for product in products %}
             <tr>
                 <td><a href="{{ path('admin_product_show', { 'id': product.id }) }}">{{ product.id }}</a></td>
-                <td>{% if product.createdDate %}{{ product.createdDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if product.updatedDate %}{{ product.updatedDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td>{{ product.sku }}</td>
@@ -38,7 +40,9 @@
         {% endfor %}
         </tbody>
     </table>
-
+        
+    {% endif %}    
+        
     <ul>
         <li>
             <a href="{{ path('admin_product_new') }}">Create a new product</a>
