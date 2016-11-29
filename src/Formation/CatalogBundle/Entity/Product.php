@@ -5,6 +5,7 @@ namespace Formation\CatalogBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Formation\CatalogBundle\Entity\Category;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Product
@@ -27,6 +28,7 @@ class Product
      * @var \DateTime
      *
      * @ORM\Column(name="created_date", type="datetime")
+     * @Assert\DateTime()
      */
     private $createdDate;
 
@@ -34,6 +36,7 @@ class Product
      * @var \DateTime
      *
      * @ORM\Column(name="updated_date", type="datetime", nullable=true)
+     * @Assert\DateTime()
      */
     private $updatedDate;
 
@@ -41,6 +44,7 @@ class Product
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -48,6 +52,7 @@ class Product
      * @var string
      *
      * @ORM\Column(name="description", type="text", nullable=true)
+     * @Assert\Length(min=10)
      */
     private $description;
 
@@ -55,6 +60,7 @@ class Product
      * @var string
      *
      * @ORM\Column(name="sku", type="string", length=255, unique=true)
+     * @Assert\NotBlank()
      */
     private $sku;
     
