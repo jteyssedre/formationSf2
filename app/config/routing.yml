@@ -1,4 +1,4 @@
-formation_admin:
+admin_product:
     resource: "@FormationAdminBundle/Controller/"
     type:     annotation
     prefix:   /
