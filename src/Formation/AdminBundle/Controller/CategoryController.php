@@ -31,14 +31,14 @@ class CategoryController extends Controller
             'categories' => $categories,
         ));
     }
-
+    
     /**
      * Creates a new category entity.
      *
-     * @Route("/new", name="admin_category_new")
+     * @Route("/{_locale}/new", name="admin_category_new", defaults={"_locale" = "en"}, requirements={"_locale" = "en|fr"}))
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, $_locale="en")
     {
         $category = new Category();
         $form = $this->createForm('Formation\AdminBundle\Form\CategoryType', $category);
