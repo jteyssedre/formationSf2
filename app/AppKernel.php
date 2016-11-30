@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Formation\PageBundle\PageBundle(),
             new Formation\CatalogBundle\CatalogBundle(),
             new Formation\AdminBundle\FormationAdminBundle(),
+            new Formation\UserBundle\FormationUserBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
