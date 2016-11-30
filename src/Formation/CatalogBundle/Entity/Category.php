@@ -91,4 +91,13 @@ class Category
     {
         return $this->description;
     }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

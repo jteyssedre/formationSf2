@@ -1,3 +1,11 @@
 page_homepage:
     path:     /
     defaults: { _controller: PageBundle:Front:index }
+    
+page_category:
+    path:    /category/{id}
+    defaults: { _controller: PageBundle:Front:category }
+    
+page_product:
+    path:    /category/{categoryId}/product/{productId}
+    defaults: { _controller: PageBundle:Front:product }

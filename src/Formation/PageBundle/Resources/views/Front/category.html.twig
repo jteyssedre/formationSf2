@@ -4,15 +4,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 col-lg-offset-4 jumbotron">
-                <h1 class="text-center">Home page</h1>
+                <h1 class="text-center">Category {{ category.name }}</h1>
             </div>
         </div>
         
         <div class="row">
             <div class="col-md-8 col-lg-offset-2 jumbotron">
-                {% for category in categories %}
-                    <h2><a href="{{ path('page_category', { 'id': category.id }) }}">{{ category.name }}</a></h2>
-                    <p>{{ category.description }}</p>
+                {% for product in products %}
+                    <h2><a href="{{ path('page_product', { 'categoryId': category.id ,'productId': product.id }) }}">{{ product.name }}</a></h2>
+                    <p>{{ product.description }}</p>
                 {% endfor%}
             </div>
         </div>

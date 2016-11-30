@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+    public function findProductsByCategory($categoryId)
+    {
+        $qb = $this->createQueryBuilder('p')
+             ->innerJoin('p.categories', 'c')
+             ->where('c.id = ?1')
+             ->setParameter('1', $categoryId);
+        
+        return $qb->getQuery()->getResult();
+    }
 }
