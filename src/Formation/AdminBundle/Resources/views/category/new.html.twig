@@ -1,22 +1,23 @@
 {% extends 'base.html.twig' %}
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
+
 {% block form %}
-    <h1>Creer une categorie</h1>
+    <h1>{% trans %}categorie.creation{% endtrans %}</h1>
 
     {{ form_start(form) }}
         <div>
-            {{ form_label(form.name) }} 
+            {{ form_label(form.name, "name.label") }} 
             {{ form_errors(form.name) }}
             {{ form_widget(form.name) }}
         </div>
 
         <div>
-            {{ form_label(form.description) }}
+            {{ form_label(form.description, "description.label") }}
             {{ form_errors(form.description) }}
             {{ form_widget(form.description) }}
         </div>
 
-        <input type="submit" class="btn btn-primary" value="Sauvegarder" />
+        <input type="submit" class="btn btn-primary" value="{% trans %}categorie.save{% endtrans %}" />
     {{ form_end(form) }}
 
     <ul>

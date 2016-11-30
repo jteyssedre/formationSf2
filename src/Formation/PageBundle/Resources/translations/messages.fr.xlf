@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="e1e444bab1adf8b260db3036dc4d7893" resname="category.title">
+        <source>category.title</source>
+        <target>Categorie</target>
+      </trans-unit>
+      <trans-unit id="0e075c65fa4c4829f41cdd1b6419ee98" resname="page.home">
+        <source>page.home</source>
+        <target>Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="1ec4980e6d722078e4fefd99df89a877" resname="product.title">
+        <source>product.title</source>
+        <target>Produit</target>
+      </trans-unit>
+      <trans-unit id="6bec06dd537bef1cb9613afa365ab2fa" resname="product.createddate">
+        <source>product.createddate</source>
+        <target>Date de création</target>
+      </trans-unit>
+      <trans-unit id="ea03eb4cdd2383361d25c94058ca245d" resname="product.updateddate">
+        <source>product.updateddate</source>
+        <target>Date de mise à jour</target>
+      </trans-unit>
+      <trans-unit id="4e78609951b9e1345ccc10fd1371f61b" resname="product.name">
+        <source>product.name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="b594fce3ce084dbf0425ef6ec245926d" resname="product.description">
+        <source>product.description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="689880d7374cc95d3cbcc572b715fc76" resname="product.sku">
+        <source>product.sku</source>
+        <target>Sku</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

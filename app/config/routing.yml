@@ -5,7 +5,8 @@ admin_product:
 
 page:
     resource: "@PageBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

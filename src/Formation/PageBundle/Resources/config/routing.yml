@@ -1,11 +1,17 @@
 page_homepage:
     path:     /
-    defaults: { _controller: PageBundle:Front:index }
-    
+    defaults: { _controller: PageBundle:Front:index, _locale: "%locale%" }
+    requirements:
+        _locale: en|fr
+        
 page_category:
     path:    /category/{id}
-    defaults: { _controller: PageBundle:Front:category }
-    
+    defaults: { _controller: PageBundle:Front:category, _locale: "%locale%" }
+    requirements:
+        _locale: en|fr
+        
 page_product:
     path:    /category/{categoryId}/product/{productId}
-    defaults: { _controller: PageBundle:Front:product }
+    defaults: { _controller: PageBundle:Front:product, _locale: "%locale%" }
+    requirements:
+        _locale: en|fr
