@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -36,6 +36,22 @@
       <trans-unit id="689880d7374cc95d3cbcc572b715fc76" resname="product.sku">
         <source>product.sku</source>
         <target>Sku</target>
+      </trans-unit>
+      <trans-unit id="6fc19a82830547cdef6057082d085e23" resname="page.connection">
+        <source>page.connection</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="4e29c8c80a6faeb1d9ab1a9ffe4ce88d" resname="page.deconnexion">
+        <source>page.deconnexion</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="e81c4e4f2b7b93b481e13a8553c2ae1b" resname="or">
+        <source>or</source>
+        <target>ou</target>
+      </trans-unit>
+      <trans-unit id="89947137899dfb01825d6853231b079f" resname="page.register">
+        <source>page.register</source>
+        <target>créer un compte</target>
       </trans-unit>
     </body>
   </file>

@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        Connecté en tant que {{ app.user.username }}
+        <a href="{{ path("fos_user_security_logout") }}">{{ "page.deconnexion" |trans}}</a>
+    {% else %}<a href="{{ path("fos_user_security_login") }}">{{ "page.connection" |trans}}</a> {{ "or" |trans}} <a href="{{ path("fos_user_registration_register") }}">{{ "page.register" |trans}}</a>
+    {% endif %}
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 col-lg-offset-4 jumbotron">
