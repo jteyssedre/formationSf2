@@ -1,4 +1,10 @@
+parameters:
+    formation_admin.log_listener.class: Formation\AdminBundle\Users\LoginListener
+
 services:
-#    formation_admin.example:
-#        class: Formation\AdminBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    formation_admin.log_listener:
+        class: %formation_admin.log_listener.class%
+        arguments:
+            - @doctrine.orm.entity_manager
+        tags:
+            - { name: kernel.event_listener, event: security.interactive_login, method: onLogin }
