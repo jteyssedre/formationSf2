@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="product")
  * @ORM\Entity(repositoryClass="Formation\CatalogBundle\Repository\ProductRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Product
 {
@@ -233,5 +234,15 @@ class Product
     public function getCategories()
     {
         return $this->categories;
+    }
+    
+    /**
+     * Update Date
+     * 
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+        $this->setUpdatedDate(new \DateTime());
     }
 }
