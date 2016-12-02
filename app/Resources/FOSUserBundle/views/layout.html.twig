@@ -1,9 +1,11 @@
 {% extends "base.html.twig" %}
-
 {% block body %}
 
   {% for key, message in app.session.flashbag.all() %}
     <div class="alert alert-{{ key }}">
+        {% if message is iterable %}
+            {% set message = message[0] %}
+        {% endif %}
       {{ message|trans({}, 'FOSUserBundle') }}
     </div>
   {% endfor %}
