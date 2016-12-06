@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Formation\AdminBundle\FormationAdminBundle(),
             new Formation\UserBundle\FormationUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Formation\CommandBundle\FormationCommandBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
