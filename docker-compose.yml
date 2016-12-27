@@ -1,0 +1,28 @@
+version: '2.0'
+services:
+  web:
+    build:
+      context: docker/apache-php7
+      args:
+        uid: ${USER_ID}
+    image: php:7.0-apache
+    expose:
+      - 80
+    ports:
+      - "8000:80"
+    volumes_from:
+      - src
+    links:
+      - mysql
+
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=symfony
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+
+  src:
+    image: alpine
+    volumes:
+      - .:/var/www/html/symfony
+    command: "true"
